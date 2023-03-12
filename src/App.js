@@ -1,0 +1,23 @@
+import React from 'react';
+import './App.css';
+// import Sidebar from './components/Sidebar';
+import { AuthProvider } from './context/AuthContext';
+import { ToastContainer } from 'react-toastify';
+
+import Main from './pages/Main';
+import Dashboard from './Dashboard';
+import { BarStyleProvider } from './context/BarStyleContext';
+
+function App() {
+  return (
+    <AuthProvider>
+      <ToastContainer />
+      {/* <Dashboard/> */}
+      <BarStyleProvider>
+        <Main />
+      </BarStyleProvider>
+    </AuthProvider>
+  );
+}
+
+export default App;
