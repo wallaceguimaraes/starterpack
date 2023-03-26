@@ -7,11 +7,10 @@ export default function Config() {
     {
       path: '/app',
       element: <Home />,
-      rules: [],
+      rules: ['admin'],
       name: 'home',
       title: 'Home',
-      icon: 'fas fa-fw fa-cog',
-      children: [{ path: '' }],
+      icon: 'fas fa-fw fa-home',
     },
     {
       path: '/app/users',

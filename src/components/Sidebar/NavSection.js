@@ -6,11 +6,8 @@ import { Link } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 function NavSection() {
-  const { authenticated, userData } = useContext(AuthContext);
+  const { userData } = useContext(AuthContext);
   let cont = 1;
-  Config().map((item) =>
-    console.log(Array.isArray(item.children) ? item.children.length : 'nao e'),
-  );
   return (
     <>
       {Config().map((item) =>
