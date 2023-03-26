@@ -3,6 +3,7 @@ import '../../pages/Main/main.css';
 import { BarStyleContext } from '../../context/BarStyleContext';
 import { useContext } from 'react';
 // import Logo from '../Logo';
+import NavSection from './NavSection';
 
 export default function Sidebar() {
   const { style, setStyle } = useContext(BarStyleContext);
@@ -57,8 +58,10 @@ export default function Sidebar() {
       {/*   <!-- Heading --> */}
       <div className="sidebar-heading">Interface</div>
 
+      <NavSection />
+
       {/*  <!-- Nav Item - Pages Collapse Menu --> */}
-      <li className="nav-item">
+      {/* <li className="nav-item">
         <a
           className="nav-link collapsed"
           href="#"
@@ -86,10 +89,10 @@ export default function Sidebar() {
             </a>
           </div>
         </div>
-      </li>
+      </li> */}
 
       {/* <!-- Nav Item - Utilities Collapse Menu --> */}
-      <li className="nav-item">
+      {/* <li className="nav-item">
         <a
           className="nav-link collapsed"
           href="#"
@@ -123,7 +126,7 @@ export default function Sidebar() {
             </a>
           </div>
         </div>
-      </li>
+      </li> */}
 
       {/*  <!-- Divider --> */}
       <hr className="sidebar-divider" />

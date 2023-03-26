@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Dashboard.css';
 
-function Dashboard() {
+function Dashboar() {
   const [style, setStyle] = useState(
     'navbar-nav bg-primary sidebar sidebar-dark accordion',
   );
@@ -1053,4 +1053,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Dashboar;

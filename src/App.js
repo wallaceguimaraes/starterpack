@@ -12,7 +12,6 @@ function App() {
   return (
     <AuthProvider>
       <ToastContainer />
-      {/* <Dashboard/> */}
       <BarStyleProvider>
         <Main />
       </BarStyleProvider>

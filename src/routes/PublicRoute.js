@@ -1,6 +1,7 @@
 import { Route, Navigate, Routes } from 'react-router-dom';
 // import SignUp from './pages/SignUp';
 import { Login } from '../pages/Login';
+import { User } from './../pages/User';
 
 export function PublicRoute() {
   return (
