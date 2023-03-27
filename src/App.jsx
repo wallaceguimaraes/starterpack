@@ -5,7 +5,6 @@ import { AuthProvider } from './context/AuthContext';
 import { ToastContainer } from 'react-toastify';
 
 import Main from './pages/Main';
-import Dashboard from './Dashboard';
 import { BarStyleProvider } from './context/BarStyleContext';
 
 function App() {

@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 /* import './index.css'; */
-import Dashboard from './Dashboard';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from './App';
+import App from './App.jsx';
 import 'bootswatch/dist/cosmo/bootstrap.min.css';
 
 /**

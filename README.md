@@ -89,3 +89,9 @@ This section has moved here:
 
 This section has moved here:
 [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-react
+
+npx babel src --out-dir dist

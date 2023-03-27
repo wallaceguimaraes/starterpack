@@ -4,6 +4,7 @@ import { BarStyleContext } from '../../context/BarStyleContext';
 import { useContext } from 'react';
 // import Logo from '../Logo';
 import NavSection from './NavSection';
+import { Link } from 'react-router-dom';
 
 export default function Sidebar() {
   const { style, setStyle } = useContext(BarStyleContext);
@@ -57,10 +58,24 @@ export default function Sidebar() {
 
       {/*  <!-- Nav Item - Dashboard --> */}
       <li className="nav-item active">
-        <a className="nav-link" href="index.html">
+        <span>
+          <Link
+            activeClassName="active-link"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+            className="nav-link"
+            to="/app/dashboard"
+          >
+            <i className="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </Link>
+        </span>
+        {/* <a className="nav-link" href="index.html">
           <i className="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
-        </a>
+        </a> */}
       </li>
 
       {/*  <!-- Divider --> */}
