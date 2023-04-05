@@ -24,23 +24,21 @@ export default function Main() {
         </Container>
       )}
       {authenticated && (
-        <div>
-          <body id="page-top">
-            {/*  <!-- Page Wrapper --> */}
-            <div id="wrapper">
-              {/** Sidebar here */}
-              <SideBar />
+        <div id="page-top">
+          {/*  <!-- Page Wrapper --> */}
+          <div id="wrapper">
+            {/** Sidebar here */}
+            <SideBar />
 
-              <div id="content-wrapper" className="d-flex flex-column">
-                {/*  <!-- Main Content --> */}
-                <div id="content">
-                  {/** Header here*/}
-                  <Header />
-                  <Content />
-                </div>
+            <div id="content-wrapper" className="d-flex flex-column">
+              {/*  <!-- Main Content --> */}
+              <div id="content">
+                {/** Header here*/}
+                <Header />
+                <Content />
               </div>
             </div>
-          </body>
+          </div>
         </div>
       )}
     </Router>

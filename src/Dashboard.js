@@ -22,8 +22,8 @@ function Dashboar() {
   };
 
   return (
-    <div>
-      <body id="page-top">
+    <>
+      <div id="page-top">
         {/*  <!-- Page Wrapper --> */}
         <div id="wrapper">
           {/*  <!-- Sidebar --> */}
@@ -1048,8 +1048,8 @@ function Dashboar() {
             </div>
           </div>
         </div>
-      </body>
-    </div>
+      </div>
+    </>
   );
 }
 

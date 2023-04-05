@@ -5,14 +5,30 @@ import Dashboard from '../pages/Dashboard';
 
 // import { Register } from './pages/Register';
 import { User } from './../pages/User';
+import Config from './Config';
 
 export function PrivateRoute() {
+  const { privateRoutes } = Config();
+
   return (
     <Routes>
+      {privateRoutes.map((item, index) =>
+        Array.isArray(item.children) && item.children.length >= 1 ? (
+          item.children.map((children, index) => (
+            <Route
+              key={index}
+              path={children.path}
+              element={children.element}
+            />
+          ))
+        ) : (
+          <Route key={index} path={item.path} element={item.element} />
+        ),
+      )}
+
       {/* <Route path="/" element={<Navigate to="/dashboard" />} /> */}
-      <Route path="/app" element={<Home />} />
-      <Route path="/app/dashboard" element={<Dashboard />} />
-      <Route path="/app/users" element={<User />} />
+      {/* <Route path="/app/dashboard" element={<Dashboard />} />
+      <Route path="/app/cadastro/usuarios" element={<User />} /> */}
     </Routes>
   );
 }

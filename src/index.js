@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App.jsx';
-import 'bootswatch/dist/cosmo/bootstrap.min.css';
+import 'bootswatch/dist/cerulean/bootstrap.min.css';
 
 /**
  * morph /

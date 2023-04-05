@@ -2,23 +2,24 @@ import React, { Children } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { useContext, useState } from 'react';
 import Config from './../../routes/Config';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 function NavSection() {
   const { userData } = useContext(AuthContext);
-  const [activeLink, setActiveLink] = useState(null); // Adiciona o state para armazenar o link ativo
-  const location = useLocation(); // Importa useLocation do react-router-dom para obter a rota atual
-  let cont = 1;
+  const { privateRoutes } = Config();
+
   return (
     <>
-      {Config().map((item) =>
+      {privateRoutes.map((item, index) =>
         item.rules.includes(userData.rule.description) ? (
-          <li className="nav-item" key={`li-${cont++}`}>
-            <a
+          <li className="nav-item" key={`li-${index}}`}>
+            <NavLink
               className="nav-link collapsed"
               style={{
                 padding: 6,
+                color: 'rgb(255 255 255 / 80%)',
+                textDecoration: 'none',
               }}
               href="#"
               data-toggle={
@@ -26,6 +27,7 @@ function NavSection() {
                   ? 'collapse'
                   : ''
               }
+              to={!Array.isArray(item.children) && `${item.path}`}
               data-target={`#collapse-${item.name}`}
               aria-expanded="true"
               aria-controls={`#collapse-${item.name}`}
@@ -38,25 +40,10 @@ function NavSection() {
               ) : (
                 <>
                   <i className={item.icon}></i>
-                  <span>
-                    <NavLink
-                      // className={`nav-item ${
-                      //   location.pathname === item.path ? 'active' : ''
-                      // }`}
-                      // onClick={() => setActiveLink(item.path)} // Atualiza o link ativo quando o link é clicado
-                      // activeClassName="active-link"
-                      style={{
-                        color: 'rgb(255 255 255 / 80%)',
-                        textDecoration: 'none',
-                      }}
-                      to={item.path}
-                    >
-                      {item.title}
-                    </NavLink>
-                  </span>
+                  <span>{item.title}</span>
                 </>
               )}
-            </a>
+            </NavLink>
             {Array.isArray(item.children) && item.children.length >= 1 ? (
               <div
                 id={`collapse-${item.name}`}
@@ -66,12 +53,11 @@ function NavSection() {
               >
                 <div className="bg-white py-2 collapse-inner rounded">
                   {/* <h6 className="collapse-header">Custom Utilities:</h6> */}
-                  {item.children.map((children) => (
+                  {item.children.map((children, index) => (
                     <NavLink
                       className="collapse-item"
                       to={children.path}
-                      key={`link-${cont++}`}
-                      // activeClassName="active-link"
+                      key={`link-${index}`}
                     >
                       {children.title}
                     </NavLink>

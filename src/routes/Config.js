@@ -1,9 +1,10 @@
 import Dashboard from '../pages/Dashboard';
 import Home from '../pages/Home/index';
 import { User } from './../pages/User';
+import { Login } from './../pages/Login/index';
 
 export default function Config() {
-  const routes = [
+  const privateRoutes = [
     {
       path: '/app',
       element: <Home />,
@@ -13,22 +14,24 @@ export default function Config() {
       icon: 'fas fa-fw fa-home',
     },
     {
-      path: '/app/users',
+      path: '/app/cadastro',
       element: <User />,
       rules: ['admin'],
-      name: 'users',
-      title: 'Usuários',
+      name: 'registrations',
+      title: 'Cadastros',
       icon: 'fas fa-fw fa-user',
       children: [
         {
-          path: '/app/users',
-          title: 'Cadastro',
+          path: '/app/cadastro/listagem',
+          title: 'Perfil',
           icon: 'fas fa-fw fa-user',
+          element: <span>Listagem</span>,
         },
         {
-          path: '/app/users',
-          title: 'Listagem',
+          path: '/app/cadastro/usuarios',
+          title: 'Usuários',
           icon: 'fas fa-fw fa-user',
+          element: <User />,
         },
       ],
     },
@@ -42,5 +45,16 @@ export default function Config() {
     },
   ];
 
-  return routes;
+  const publicRoutes = [
+    {
+      path: '/login',
+      element: <Login />,
+      rules: [],
+      name: 'login',
+      title: 'Login',
+      icon: 'fas fa-fw fa-home',
+    },
+  ];
+
+  return { privateRoutes, publicRoutes };
 }
